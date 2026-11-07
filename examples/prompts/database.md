@@ -1,0 +1,3 @@
+# Database
+
+変更できるのは `examples/task_manager/db.py` だけです。init_db、get_tasks、get_task、create_task、update_task、delete_taskを提供します。テストからDB_PATHを差し替えられるようにします。接続は必ず閉じ、書き込みにはトランザクション、値にはパラメーター化SQLを使用します。動的な列名は固定の許可リストから生成してください。データがない場合の戻り値をNone／Falseとして定義し、データベース例外を空リストに偽装しないでください。

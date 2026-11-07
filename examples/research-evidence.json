@@ -1,0 +1,18 @@
+{
+  "question": "ローカルLLMとマルチエージェント開発環境をどのように階層化して選定するか？",
+  "sources": [
+    {"id": "S1", "title": "Herdr Agent automation", "url": "https://herdr.dev/tui/docs/agent-automation/", "accessed": "2026-11-06", "kind": "公式ドキュメント"},
+    {"id": "S2", "title": "Herdr CLI reference", "url": "https://herdr.dev/tui/docs/cli-reference/", "accessed": "2026-11-06", "kind": "公式ドキュメント"},
+    {"id": "S3", "title": "Ollama API Introduction", "url": "https://docs.ollama.com/api/introduction", "accessed": "2026-11-06", "kind": "公式ドキュメント"},
+    {"id": "S4", "title": "llama.cpp HTTP Server", "url": "https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md", "accessed": "2026-11-06", "kind": "公式ドキュメント"},
+    {"id": "S5", "title": "Codex CLI", "url": "https://developers.openai.com/codex/cli/", "accessed": "2026-11-06", "kind": "公式ドキュメント"}
+  ],
+  "claims": [
+    {"text": "完了待機はライフサイクル状態を確認するもので、成果物の検収は別に必要", "status": "supported", "evidence": [{"source": "S1", "quote": "It does not track individual turns."}]},
+    {"text": "pane wait-outputは通常のプロセス出力、agent waitはAgentの状態待機に使う", "status": "supported", "evidence": [{"source": "S2", "quote": "Use pane wait-output for normal commands and servers. Use agent wait for coding agents."}]},
+    {"text": "Ollamaにはローカル推論の入口があり、クラウド利用も提供される", "status": "supported", "evidence": [{"source": "S3", "quote": "Use Ollama's API to build applications with cloud or local models."}]},
+    {"text": "llama.cpp serverはモデル用REST APIとWeb UIを提供する", "status": "supported", "evidence": [{"source": "S4", "quote": "Set of LLM REST APIs and a web UI to interact with llama.cpp."}]},
+    {"text": "Coding CLIはターミナル内でコードを調査・変更し、コマンドを実行できる", "status": "supported", "evidence": [{"source": "S5", "quote": "Inspect code, make changes, run commands, and automate repeatable work without leaving your terminal."}]},
+    {"text": "Agentを増やせばローカルLLMの調査精度が必ず上がる", "status": "uncertain", "evidence": []}
+  ]
+}
