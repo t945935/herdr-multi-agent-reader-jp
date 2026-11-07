@@ -3,13 +3,19 @@ const list = document.querySelector('#tasks');
 const status = document.querySelector('#status');
 async function request(path, options = {}) {
   const response = await fetch(path, {headers: {'Content-Type': 'application/json'}, ...options});
-  if (!response.ok) throw new Error(`API ${response.status}：${await response.text()}`);
+  if (!response.ok) {
+    const messages = {404: '指定したタスクが見つかりません。', 422: '入力内容を確認してください。'};
+    throw new Error(messages[response.status] ?? `通信に失敗しました（HTTP ${response.status}）。`);
+  }
   return response.status === 204 ? null : response.json();
 }
 async function perform(action) {
   status.textContent = '処理しています…';
   try { await action(); await refresh(); status.textContent = ''; }
-  catch (error) { status.textContent = `エラー：${error.message}`; }
+  catch (error) {
+    const message = error instanceof TypeError ? 'サーバーに接続できません。' : error.message;
+    status.textContent = `エラー：${message}`;
+  }
 }
 async function refresh() {
   const tasks = await request('/api/tasks');

@@ -2,7 +2,7 @@
 
 このディレクトリには、日本語版に対応するプログラム、テスト、役割別プロンプトを収録します。
 
-公開リソース：[リポジトリ](https://github.com/t945935/herdr-multi-agent-reader-jp) · [v1.0.0リリース](https://github.com/t945935/herdr-multi-agent-reader-jp/releases/tag/v1.0.0)。ZIPとSHA-256はリリースのAssetsから取得できます。
+公開リソース：[リポジトリ](https://github.com/t945935/herdr-multi-agent-reader-jp) · [v1.0.1リリース](https://github.com/t945935/herdr-multi-agent-reader-jp/releases/tag/v1.0.1)。ZIPとSHA-256はリリースのAssetsから取得できます。
 
 ## 実行環境
 
